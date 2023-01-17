@@ -25,13 +25,18 @@ class DataIngestion:
                 database_name=self.data_ingestion_config.database_name, 
                 collection_name=self.data_ingestion_config.collection_name)
 
-            logging.info("Dropping column: ID")
+            #logging.info("Dropping column: ID")
             # Drop ID column
-            df = df.drop("ID",axis=1)
-            logging.info(f"Rows and columns in df: {df.shape}")
+            #df = df.drop("ID",axis=1)
+            #logging.info(f"Rows and columns in df: {df.shape}")
             
             # Replace na with NAN
             df.replace(to_replace="na",value=np.NAN,inplace=True)
+
+            logging.info("Dropping duplicate data from df")
+            # Drop duplicates if any
+            df = df.drop_duplicates()
+            logging.info(f"Rows and columns in df after dropping duplicates: {df.shape}")
 
             logging.info("Save data in feature store")
             #Save data in feature store
