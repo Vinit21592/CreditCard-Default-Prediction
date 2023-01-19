@@ -41,23 +41,23 @@ class ModelTrainer:
             logging.info(f"Train the model")
             model = self.train_model(x=x_train, y=y_train)
 
-            logging.info(f"Calculating f1 train score")
+            logging.info(f"Calculating accuracy train score")
             yhat_train = model.predict(x_train)
-            f1_train_score = f1_score(y_true=y_train, y_pred=yhat_train)
+            acc_train_score = accuracy_score(y_true=y_train, y_pred=yhat_train)
 
-            logging.info(f"Calculating f1 test score")
+            logging.info(f"Calculating accuracy test score")
             yhat_test = model.predict(x_test)
-            f1_test_score = f1_score(y_true=y_test, y_pred=yhat_test)
+            acc_test_score = accuracy_score(y_true=y_test, y_pred=yhat_test)
 
-            logging.info(f"train score: {f1_train_score} and test score: {f1_test_score}")
+            logging.info(f"train score: {acc_train_score} and test score: {acc_test_score}")
             # check for overfitting or underfitting or expected score
             logging.info(f"Checking if our model is underfitting or not")
-            if f1_test_score<self.model_trainer_config.expected_score:
+            if acc_test_score<self.model_trainer_config.expected_score:
                 raise Exception(f"Model is not good as it is not able to give \
-                expected accuracy: {self.model_trainer_config.expected_score}: model actual score: {f1_test_score}")
+                expected accuracy: {self.model_trainer_config.expected_score}: model actual score: {acc_test_score}")
 
             logging.info(f"Checking if our model is overfitting or not")
-            diff = abs(f1_train_score-f1_test_score)
+            diff = abs(acc_train_score-acc_test_score)
 
             if diff>self.model_trainer_config.overfitting_threshold:
                 raise Exception(f"Train and test score diff: {diff} is more than overfitting threshold {self.model_trainer_config.overfitting_threshold}")
@@ -69,7 +69,7 @@ class ModelTrainer:
             # prepare artifact
             logging.info(f"Prepare the artifact")
             model_trainer_artifact = artifact_entity.ModelTrainerArtifact(model_path=self.model_trainer_config.model_path, 
-            f1_train_score=f1_train_score, f1_test_score=f1_test_score)
+            acc_train_score=acc_train_score, acc_test_score=acc_test_score)
             logging.info(f"Model trainer artifact: {model_trainer_artifact}")
             return model_trainer_artifact
         except Exception as e:
