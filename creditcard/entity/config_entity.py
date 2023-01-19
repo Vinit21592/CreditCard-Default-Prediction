@@ -47,6 +47,7 @@ class DataValidationConfig:
         self.report_file_path = os.path.join(self.data_validation_dir,"report.yaml")
         self.missing_threshold:float = 0.2
         self.base_file_path = os.path.join("UCI_Credit_Card.csv")
+
         
 class DataTransformationConfig:
 
@@ -65,6 +66,12 @@ class ModelTrainerConfig:
         self.model_path = os.path.join(self.model_trainer_dir,"model",MODEL_FILE_NAME)
         self.expected_score = 0.7
         self.overfitting_threshold = 0.1
+        
 
-class ModelEvaluationConfig:...
+class ModelEvaluationConfig:
+
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+        self.change_threshold = 0.01
+
+
 class ModelPusherConfig:...

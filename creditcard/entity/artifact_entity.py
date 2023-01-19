@@ -23,6 +23,10 @@ class ModelTrainerArtifact:
     acc_train_score:float
     acc_test_score:float
 
+@dataclass
+class ModelEvaluationArtifact:
+    is_model_accepted:bool
+    improved_accuracy:float
 
-class ModelEvaluationArtifact:...
+    
 class ModelPusherArtifact:...
