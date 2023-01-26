@@ -1,8 +1,9 @@
 import pymongo
 import pandas as pd
 import json
+from creditcard.config import mongo_client
 # Provide the mongodb localhost url to connect python to mongodb.
-client = pymongo.MongoClient("mongodb+srv://Vinit21592:vins21592@cluster0.dl9uoq9.mongodb.net/?retryWrites=true&w=majority")
+# client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
 
 DATA_FILE_PATH="/config/workspace/UCI_Credit_Card.csv"
 DATABASE_NAME="credit"
