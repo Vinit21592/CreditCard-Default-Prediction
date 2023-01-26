@@ -20,4 +20,4 @@ if __name__=="__main__":
     print(json_record[0])
 
     # insert converted json record to mongodb
-    client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+    mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
