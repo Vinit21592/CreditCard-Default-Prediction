@@ -27,8 +27,11 @@ def start_batch_prediction(input_file_path):
         logging.info(f"Loading model to make prediction")
         model = load_object(file_path=model_resolver.get_latest_model_path())
         prediction = model.predict(input_arr)
+        prediction_proba = np.round(model.predict_proba(input_arr),3)
+        prediction_proba = prediction_proba[:, 1]
 
         df["prediction"] = prediction
+        df["probability"] = prediction_proba
 
         prediction_file_name = os.path.basename(input_file_path).replace(".csv",f"{datetime.now().strftime('%m%d%Y__%H%M%S')}.csv")
         prediction_file_path = os.path.join(PREDICTION_DIR,prediction_file_name)
