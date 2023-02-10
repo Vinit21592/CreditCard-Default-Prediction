@@ -13,7 +13,7 @@ with DAG(
     # [END default_args]
     description='Credit Card Default Prediction',
     schedule_interval="@weekly",
-    start_date=pendulum.datetime(2023, 1, 10, tz="UTC"),
+    start_date=pendulum.datetime(2023, 2, 10, tz="UTC"),
     catchup=False,
     tags=['example'],
 ) as dag:
