@@ -11,8 +11,8 @@ with DAG(
     default_args={'retries': 2},
     # [END default_args]
     description='Credit Card Default Prediction',
-    schedule_interval="@weekly",
-    start_date=pendulum.datetime(2023, 2, 13, tz="UTC"),
+    schedule_interval="@daily",
+    start_date=pendulum.datetime(2023, 2, 12, tz="UTC"),
     catchup=False,
     tags=['example'],
 ) as dag:
