@@ -47,16 +47,22 @@ The following approach explains the project lifecycle :
   * **Webpage** : We use apache airflow for pipeline training and for batch predictions.
   * **Deployment** : The project is deployed on AWS using airflow.
   
-  ### Web Interface
-  * **Airflow Login page**
+### Deployment Link
   
-  To access Airflow, user will need to sign in using username and password as shown in the login page below.
-  ![Airflow login page](https://user-images.githubusercontent.com/78821357/218680245-7a18d011-2793-4493-ad77-565032b1de90.png)
+```bash
+http://ec2-65-0-21-196.ap-south-1.compute.amazonaws.com:8080
+```
   
-  * **DAGs (directed acyclic graph) homepage**
+### Web Interface
+* **Airflow Login page**
   
-  After login user will get list of DAGs, out of which user can select creditcard_training to retrain the training pipeline if required or batch_prediction to make  batch predictions.
-  ![Airflow - Dags](https://user-images.githubusercontent.com/78821357/218697454-fb7e0609-8275-4525-969c-f87134025a0d.png)
+To access Airflow, user will need to sign in using username and password as shown in the login page below.
+![Airflow login page](https://user-images.githubusercontent.com/78821357/218680245-7a18d011-2793-4493-ad77-565032b1de90.png)
+  
+* **DAGs (directed acyclic graph) homepage**
+  
+After login user will get list of DAGs, out of which user can select creditcard_training to retrain the training pipeline if required or batch_prediction to make  batch predictions.
+![Airflow - Dags](https://user-images.githubusercontent.com/78821357/218697454-fb7e0609-8275-4525-969c-f87134025a0d.png)
 
 * **Creditcard_training homepage**
 
@@ -71,5 +77,19 @@ Similar to training DAG user can access batch_prediction DAG. For batch predicti
 
 ### How to run?
 Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage. You also need AWS account to access the service like S3, ECR and EC2 instances.
+
+### Data Collections
+![Data Collection](https://user-images.githubusercontent.com/78821357/218706207-7d4235a2-a448-4049-ad26-01fc543a1366.png)
+
+### Project Training Pipeline
+![Training Pipeline](https://user-images.githubusercontent.com/78821357/218709407-48f0e28e-dfd1-43e1-8de8-2dbde3cc07ac.png)
+
+### Deployment Architecture
+![Deployment Architecture](https://user-images.githubusercontent.com/78821357/218709683-5db71a6f-9b77-42d2-9320-bd8530138268.png)
+
+### Step 1: Clone the repository
+```bash
+http://ec2-65-0-21-196.ap-south-1.compute.amazonaws.com:8080
+```
 
 Author : Vinit.AL
