@@ -87,9 +87,119 @@ Before we run the project, make sure that you are having MongoDB in your local s
 ### Deployment Architecture
 ![Deployment Architecture](https://user-images.githubusercontent.com/78821357/218709683-5db71a6f-9b77-42d2-9320-bd8530138268.png)
 
-### Step 1: Clone the repository
+#### Step 1: Clone the repository
 ```bash
-http://ec2-65-0-21-196.ap-south-1.compute.amazonaws.com:8080
+git clone https://github.com/Vinit21592/CreditCard-Default-Prediction.git
+```
+
+#### Step 2- Create a conda environment after opening the repository
+```bash
+conda create -n creditcard python=3.8 -y
+```
+```bash
+conda activate creditcard
+```
+
+#### Step 3 - Install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+#### Step 4 - Export the environment variable
+```bash
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+
+export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+
+export AWS_DEFAULT_REGION=<AWS_DEFAULT_REGION>
+
+export MONGODB_URL="mongodb+srv://<username>:<password>@cluster0.dl9uoq9.mongodb.net/?retryWrites=true&w=majority"
+```
+
+#### Step 5 - Run the application server
+```bash
+python main.py
+```
+```bash
+python train.py
+```
+
+### Run locally
+1. Check if the Dockerfile is available in the project directory
+
+2. Build the Docker image
+```bash
+docker build --build-arg AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID> --build-arg AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY> --build-arg AWS_DEFAULT_REGION=<AWS_DEFAULT_REGION> --build-arg MONGODB_URL=<MONGODB_URL> . 
+```
+3. Run the Docker image
+```bash
+docker run -d -p 8080:8080 <IMAGE_NAME>
+```
+
+To run the project first execute the below commmand. MONGO DB URL:
+```bash
+mongodb+srv://Vinit21592:vins21592@cluster0.dl9uoq9.mongodb.net/?retryWrites=true&w=majority
+```
+windows user
+```bash
+MONGO_DB_URL=mongodb+srv://Vinit21592:vins21592@cluster0.dl9uoq9.mongodb.net/?retryWrites=true&w=majority
+```
+Linux user
+```bash
+export MONGO_DB_URL=mongodb+srv://Vinit21592:vins21592@cluster0.dl9uoq9.mongodb.net/?retryWrites=true&w=majority
+```
+then run
+```bash
+python main.py
+```
+
+### Git Commands
+#### If you are starting a project and you want to use git in your project
+```bash
+git init
+```
+Note: This is going to initalize git in your source code.
+
+OR
+
+#### You can clone exiting github repo
+```bash
+git clone <github_url>
+```
+Note: Clone/ Download github repo in your system
+
+#### Add your changes made in file to git stagging area
+```bash
+git add file_name
+```
+Note: You can given file_name to add specific file or use "." to add everything to stagging area
+
+#### Create commits
+```bash
+git commit -m "message"
+```
+```bash
+git push origin main
+```
+Note: origin--> contains url to your github repo, main--> is your branch name
+
+#### To push your changes forcefully
+```bash
+git push origin main -f
+```
+
+#### To pull changes from github repo
+```bash
+git pull origin main
+```
+Note: origin--> contains url to your github repo, main--> is your branch name
+
+### Install Dockers in AWS EC2
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
 ```
 
 Author : Vinit.AL
