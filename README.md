@@ -202,4 +202,20 @@ sudo usermod -aG docker ubuntu
 newgrp docker
 ```
 
-Author : Vinit.AL
+### High Level Design
+URL : https://drive.google.com/file/d/1wh4rMiVD4SKOYl8VPFEqnglU58Sf_23t/view?usp=share_link
+
+### Low Level Design
+URL : https://drive.google.com/file/d/1-RshteFJ0hZav62VxL32rXlvKMTaq9Nn/view?usp=share_link
+
+### Architecture Design
+URL : https://drive.google.com/file/d/1IsbQUvRRVrCJeCUHRuvzUaT3Xqmy8adS/view?usp=share_link
+
+### Wireframe Document
+URL : https://drive.google.com/file/d/1NxoCe7PmTNBXjz1LZHB9r0pRNDG-UCY2/view?usp=share_link
+
+### Detailed Project Report
+URL : https://drive.google.com/file/d/1EX3Gst16zFdBDFv3qTnVizoHNiXbxdCL/view?usp=share_link
+
+### Author
+Vinit Arun Londhe (LinkedIn: https://www.linkedin.com/in/vinit-londhe21)
