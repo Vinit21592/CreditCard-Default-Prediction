@@ -3,17 +3,17 @@
 ![CCD](https://user-images.githubusercontent.com/78821357/218680447-82cf98f8-b480-4219-955f-2c7446bf3eb4.jpg)
 
 
-### Problem Statement
+## Problem Statement
 Financial threats are displaying a trend in the credit risk of commercial banks as the incredible improvement in the financial industry has arisen. In this way, one of the biggest threats faced by commercial banks is the risk prediction of credit clients. The goal is to predict the probability of credit default based on the credit card owner's characteristics and payment history.
 
-### Solution Proposed
+## Solution Proposed
 There are two solutions here, the first is developing a web-based API interface for us to predict whether customer will default next month or not based on the details of the customer and the second approach is using batch prediction in which a csv file containing all the customer details will be taken as batch input and will generate a prediction file for each customer as an output.
 
-### Dataset
+## Dataset
 The dataset is in .csv format and the data was collected from the source link below.
 Data Source: https://www.kaggle.com/datasets/uciml/default-of-credit-card-clients-dataset
 
-### Tech Stack Used
+## Tech Stack Used
 1. Python
 2. VS Code
 3. Jupyter Notebook
@@ -21,14 +21,14 @@ Data Source: https://www.kaggle.com/datasets/uciml/default-of-credit-card-client
 5. Docker
 6. MongoDB
 
-### Infrastructure Required
+## Infrastructure Required
 1. AWS EC2
 2. AWS ECR
 3. AWS S3
 4. GitHub Actions
 5. Apache Airflow
 
-### Approach
+## Approach
 Performed various machine learning tasks like Data Pre-processing, Data Visualization, Feature Engineering, Model Building, Model Testing etc. to build a solution that should be able to predict the probability of whether a customer becomes a defaulter or not.
 
 The following approach explains the project lifecycle :
@@ -47,13 +47,13 @@ The following approach explains the project lifecycle :
   * **Webpage** : We use apache airflow for pipeline training and for batch predictions.
   * **Deployment** : The project is deployed on AWS using airflow.
   
-### Deployment Link
+## Deployment Link
   
 ```bash
 http://ec2-65-0-21-196.ap-south-1.compute.amazonaws.com:8080
 ```
   
-### Web Interface
+## Web Interface
 * **Airflow Login page**
   
 To access Airflow, user will need to sign in using username and password as shown in the login page below.
@@ -75,24 +75,24 @@ Similar to training DAG user can access batch_prediction DAG. For batch predicti
 ![Airflow-batch-prediction-graph](https://user-images.githubusercontent.com/78821357/218699587-3a8040ce-c9ad-4c7c-8a5f-926f537a486f.png)
 
 
-### How to run?
+## How to run?
 Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage. You also need AWS account to access the service like S3, ECR and EC2 instances.
 
-### Data Collections
+## Data Collections
 ![Data Collection](https://user-images.githubusercontent.com/78821357/218706207-7d4235a2-a448-4049-ad26-01fc543a1366.png)
 
-### Project Training Pipeline
+## Project Training Pipeline
 ![Training Pipeline](https://user-images.githubusercontent.com/78821357/218709407-48f0e28e-dfd1-43e1-8de8-2dbde3cc07ac.png)
 
-### Deployment Architecture
+## Deployment Architecture
 ![Deployment Architecture](https://user-images.githubusercontent.com/78821357/218709683-5db71a6f-9b77-42d2-9320-bd8530138268.png)
 
-#### Step 1: Clone the repository
+### Step 1: Clone the repository
 ```bash
 git clone https://github.com/Vinit21592/CreditCard-Default-Prediction.git
 ```
 
-#### Step 2- Create a conda environment after opening the repository
+### Step 2- Create a conda environment after opening the repository
 ```bash
 conda create -n creditcard python=3.8 -y
 ```
@@ -100,12 +100,12 @@ conda create -n creditcard python=3.8 -y
 conda activate creditcard
 ```
 
-#### Step 3 - Install the requirements
+### Step 3 - Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Step 4 - Export the environment variable
+### Step 4 - Export the environment variable
 ```bash
 export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
 
@@ -116,7 +116,7 @@ export AWS_DEFAULT_REGION=<AWS_DEFAULT_REGION>
 export MONGODB_URL="mongodb+srv://<username>:<password>@cluster0.dl9uoq9.mongodb.net/?retryWrites=true&w=majority"
 ```
 
-#### Step 5 - Run the application server
+### Step 5 - Run the application server
 ```bash
 python main.py
 ```
@@ -124,7 +124,7 @@ python main.py
 python train.py
 ```
 
-### Run locally
+## Run locally
 1. Check if the Dockerfile is available in the project directory
 
 2. Build the Docker image
@@ -153,8 +153,8 @@ then run
 python main.py
 ```
 
-### Git Commands
-#### If you are starting a project and you want to use git in your project
+## Git Commands
+### If you are starting a project and you want to use git in your project
 ```bash
 git init
 ```
@@ -162,19 +162,19 @@ Note: This is going to initalize git in your source code.
 
 OR
 
-#### You can clone exiting github repo
+### You can clone exiting github repo
 ```bash
 git clone <github_url>
 ```
 Note: Clone/ Download github repo in your system
 
-#### Add your changes made in file to git stagging area
+### Add your changes made in file to git stagging area
 ```bash
 git add file_name
 ```
 Note: You can given file_name to add specific file or use "." to add everything to stagging area
 
-#### Create commits
+### Create commits
 ```bash
 git commit -m "message"
 ```
@@ -183,18 +183,18 @@ git push origin main
 ```
 Note: origin--> contains url to your github repo, main--> is your branch name
 
-#### To push your changes forcefully
+### To push your changes forcefully
 ```bash
 git push origin main -f
 ```
 
-#### To pull changes from github repo
+### To pull changes from github repo
 ```bash
 git pull origin main
 ```
 Note: origin--> contains url to your github repo, main--> is your branch name
 
-### Install Dockers in AWS EC2
+## Install Dockers in AWS EC2
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -202,20 +202,20 @@ sudo usermod -aG docker ubuntu
 newgrp docker
 ```
 
-### High Level Design
+## High Level Design
 URL : https://drive.google.com/file/d/1wh4rMiVD4SKOYl8VPFEqnglU58Sf_23t/view?usp=share_link
 
-### Low Level Design
+## Low Level Design
 URL : https://drive.google.com/file/d/1-RshteFJ0hZav62VxL32rXlvKMTaq9Nn/view?usp=share_link
 
-### Architecture Design
+## Architecture Design
 URL : https://drive.google.com/file/d/1IsbQUvRRVrCJeCUHRuvzUaT3Xqmy8adS/view?usp=share_link
 
-### Wireframe Document
+## Wireframe Document
 URL : https://drive.google.com/file/d/1NxoCe7PmTNBXjz1LZHB9r0pRNDG-UCY2/view?usp=share_link
 
-### Detailed Project Report
+## Detailed Project Report
 URL : https://drive.google.com/file/d/1EX3Gst16zFdBDFv3qTnVizoHNiXbxdCL/view?usp=share_link
 
-### Author
+## Author
 Vinit Arun Londhe (LinkedIn: https://www.linkedin.com/in/vinit-londhe21)
