@@ -217,5 +217,8 @@ URL : https://drive.google.com/file/d/1NxoCe7PmTNBXjz1LZHB9r0pRNDG-UCY2/view?usp
 ## Detailed Project Report
 URL : https://drive.google.com/file/d/1EX3Gst16zFdBDFv3qTnVizoHNiXbxdCL/view?usp=share_link
 
+## Project Demo Video
+URL : https://drive.google.com/file/d/1E1JoysWb_vwn8SiCG3ZW660BRVR104uL/view?usp=share_link
+
 ## Author
 Vinit Arun Londhe (LinkedIn: https://www.linkedin.com/in/vinit-londhe21)
